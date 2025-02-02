@@ -34,6 +34,7 @@ export const createNotification = async (data) => {
     const command = new PutCommand(params);
     await docClient.send(command);
     console.log("Notificação criada com sucesso");
+    return true;
   } catch (error) {
     console.error("Erro ao criar notificação no DynamoDB", error);
     throw new Error("Falha ao criar notificação", error);
